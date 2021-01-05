@@ -23,4 +23,4 @@ Route::get("/soham",function(){
 });
 
 //Route::get("/user",[UserController::class,'index2']);
-Route::get("/user",[UserController::class,'eloquent']);
+Route::get("/user",[UserController::class,'eloquent_advance']);

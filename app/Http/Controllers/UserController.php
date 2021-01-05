@@ -8,13 +8,13 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function simple_db_queries(){
 
        // DB::insert('insert into users (id, name, email,password) values (?, ?,?,?)',
        //              [1, 'Dayle','soham@gmail.com','soham46']);
        // executed
 
-       DB::update('update users set name = ? where id = ?', ['Soham',1]);
+      // DB::update('update users set name = ? where id = ?', ['Soham',1]);
 
        $result=DB::select('select * from users');
        return $result;
@@ -25,7 +25,7 @@ class UserController extends Controller
 
     }
 
-    public function index2(){
+    public function index(){
         return view("welcome");
     }
 
@@ -44,6 +44,18 @@ class UserController extends Controller
         //User::where('id',1)->delete();   //for deleting
         //User::where('id',2)->update(['name'=>'hit','email'=>"het@gmail.com"]);    //updating
 
+    }
+
+    public function eloquent_advance(){
+        $data=[
+            'name'=>'virat1',
+            'email'=> 'virat1@gmail.com',
+            'password'=> 'virat46'  //automatically crypted by mutator in user.php
+        ];
+        User::create($data);   //create method will look for fillable fields only
+        
+        $result = User::all();  
+        return $result;
     }
     
 }
