@@ -45,4 +45,5 @@ class UserController extends Controller
         //User::where('id',2)->update(['name'=>'hit','email'=>"het@gmail.com"]);    //updating
 
     }
+    
 }
