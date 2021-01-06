@@ -1,3 +1,6 @@
+<!-- Schema of every page, it will be extended in every page, and yield in this file
+would be mapped with section of the file who called this file -->
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>

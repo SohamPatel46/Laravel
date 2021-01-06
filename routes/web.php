@@ -25,7 +25,6 @@ Route::get("/soham",function(){
 //Route::get("/user",[UserController::class,'index']);
 Route::get("/user",[UserController::class,'eloquent_advance']);
 
-
-Auth::routes();
-
+Auth::routes();     //  ??
+ 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

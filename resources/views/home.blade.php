@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.app')         
+<!-- Displays whole 'layouts/app.blade.php' and adds a dynamic part(section) 
+in the (yield) of app.blade.php -->
 
 @section('content')
 <div class="container">
