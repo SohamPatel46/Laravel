@@ -22,5 +22,10 @@ Route::get("/soham",function(){
     return view('soham');
 });
 
-//Route::get("/user",[UserController::class,'index2']);
+//Route::get("/user",[UserController::class,'index']);
 Route::get("/user",[UserController::class,'eloquent_advance']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -42,11 +42,13 @@ class User extends Authenticatable
     ];
 
     //Mutator and Accessor
-    public function setPasswordAttribute($password){      //automatically called when data 
-        $this->attributes['password'] = bcrypt($password); //is inserted into db  - mutator
-    }
-
-    public function getNameAttribute($name){    //changes $name by the given condition
-        return "I am : ".ucfirst($name);       //when data is accessed - Accessor
-    }
+    /**
+    *public function setPasswordAttribute($password){      //automatically called when data 
+    *    $this->attributes['password'] = bcrypt($password); //is inserted into db  - mutator
+    *}
+    *
+    *public function getNameAttribute($name){    //changes $name by the given condition
+    *    return "I am : ".ucfirst($name);       //when data is accessed - Accessor
+    *}
+    */
 }
