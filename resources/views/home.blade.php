@@ -18,6 +18,14 @@ in the (yield) of app.blade.php -->
 
                     {{ __('You are logged in!') }}
                 </div>
+
+                <div class="card-body">
+                    <form method="post" action="/upload" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="image">
+                        <input type="submit" value="Upload">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
