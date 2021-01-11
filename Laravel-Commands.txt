@@ -4,8 +4,10 @@ php artisan                             ->cmd line system for Laravel
 php artisan serve                       ->To serve into localhost:8000
 php artisan make:controller Name        ->To make a controller
 php artisan migrate                     ->To create tables in database and connect
+php artisan migrate:refresh             ->When we modify any table schema(add a column)
 composer require laravel/ui             ->Laravel/ui provides authentication scaffolding
 php artisan ui:auth                     ->Scaffold basic login & registration views and routes
 php artisan ui bootstrap (vue/react)    ->Installs bootstrap's front-end scaffolding 
 npm install && npm run dev              ->Npm is used to install dependencies of front-end
 php artisan route:list                  ->To see all routes
+php artisan storage:link                ->creates a shortcut link for /storage/app/public in /public

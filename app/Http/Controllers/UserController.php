@@ -57,5 +57,19 @@ class UserController extends Controller
         $result = User::all();  
         return $result;
     }
+
+    public function uploadAvatar(Request $request){
+
+        if($request->hasFile('image'))
+        {
+            $FileName = $request->image->getClientOriginalName();
+            $request->image->storeAs('FolderName',$FileName,'public');
+            auth()->user()->update(['avatar'=>$FileName]);
+            //return 'Done';
+            return redirect()->back();
+        }
+
+        
+    }
     
 }

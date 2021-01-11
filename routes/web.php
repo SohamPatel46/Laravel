@@ -30,10 +30,10 @@ Auth::routes();     //  ??
  
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::post('/upload',function(Request $request){
+Route::post('/upload',[UserController::class,'uploadAvatar'])
     //dd($request->all());        just gets the image name
     //dd($request->image);        get all details of 'image'-> name of input field in form
     //dd($request->hasfile('image'));      returns a boolean
-    $request->image->store('FolderName','public');       //by default '/storage/app/' , but here in '/storage/public'
-    return 'SuccessFully uploaded';
-});
+    //$request->image->store('FolderName','public');       //by default '/storage/app/' , but here in '/storage/public'
+    //return 'SuccessFully uploaded';
+;
