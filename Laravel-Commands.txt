@@ -11,3 +11,4 @@ php artisan ui bootstrap (vue/react)    ->Installs bootstrap's front-end scaffol
 npm install && npm run dev              ->Npm is used to install dependencies of front-end
 php artisan route:list                  ->To see all routes
 php artisan storage:link                ->creates a shortcut link for /storage/app/public in /public
+php artisan make:component Name         ->creates alert component in views/component/alert.blade.php

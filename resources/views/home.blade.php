@@ -20,6 +20,10 @@ in the (yield) of app.blade.php -->
                 </div>
 
                 <div class="card-body">
+                <!-- @include('layouts.flash')    connected to flash file for notification -->
+                <x-alert>
+                    <p>Hey, from component alert</p>
+                </x-alert>
                     <form method="post" action="/upload" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="image">

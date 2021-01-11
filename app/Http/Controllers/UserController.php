@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use App\Models\User;
 
 class UserController extends Controller
@@ -58,18 +59,30 @@ class UserController extends Controller
         return $result;
     }
 
+    //we should move this in user file as everything is related to user only
     public function uploadAvatar(Request $request){
 
         if($request->hasFile('image'))
         {
             $FileName = $request->image->getClientOriginalName();
+            $this->deleteOldImage();
             $request->image->storeAs('FolderName',$FileName,'public');
             auth()->user()->update(['avatar'=>$FileName]);
             //return 'Done';
+            //session()->put('message','Image uploaded');         stores in session permenantly
+            request()->session()->flash('message','Image uploaded');  //stores for 1 refresh
             return redirect()->back();
-        }
+        }  
+        //request()->session()->flash('error','Image not uploaded');  //stores for 1 refresh
+        return redirect()->back()->with('error','Image not uploaded'); //does same thing
+          
+    }
 
-        
+    protected function deleteOldImage(){
+        if(auth()->user()->avatar)         //delets previous stored images
+            {
+                Storage::delete('/public/FolderName/'.auth()->user()->avatar);
+            }
     }
     
 }
