@@ -1,5 +1,6 @@
 Laravel 8.x
 
+laravel new blog			->To create new project
 php artisan                             ->cmd line system for Laravel
 php artisan serve                       ->To serve into localhost:8000
 php artisan make:controller Name        ->To make a controller
@@ -12,3 +13,5 @@ npm install && npm run dev              ->Npm is used to install dependencies of
 php artisan route:list                  ->To see all routes
 php artisan storage:link                ->creates a shortcut link for /storage/app/public in /public
 php artisan make:component Name         ->creates alert component in views/component/alert.blade.php
+
+pa make:model Todo -mc			->creates Todo model,migration,controller
