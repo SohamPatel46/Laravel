@@ -15,3 +15,5 @@ php artisan storage:link                ->creates a shortcut link for /storage/a
 php artisan make:component Name         ->creates alert component in views/component/alert.blade.php
 
 pa make:model Todo -mc			->creates Todo model,migration,controller
+pa make:request Name			->For validation request
+pa route:list				->To see all route names
